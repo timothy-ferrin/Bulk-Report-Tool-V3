@@ -1,0 +1,19 @@
+C:\Users\tferrin_admin\source\repos\Bulk Report Tool V3\Bulk Report Tool V3\bin\Debug\Bulk Report Tool V3.exe.config
+C:\Users\tferrin_admin\source\repos\Bulk Report Tool V3\Bulk Report Tool V3\bin\Debug\Bulk Report Tool V3.exe
+C:\Users\tferrin_admin\source\repos\Bulk Report Tool V3\Bulk Report Tool V3\bin\Debug\Bulk Report Tool V3.pdb
+C:\Users\tferrin_admin\source\repos\Bulk Report Tool V3\Bulk Report Tool V3\bin\Debug\Newtonsoft.Json.dll
+C:\Users\tferrin_admin\source\repos\Bulk Report Tool V3\Bulk Report Tool V3\bin\Debug\RegexMatcher.dll
+C:\Users\tferrin_admin\source\repos\Bulk Report Tool V3\Bulk Report Tool V3\bin\Debug\Newtonsoft.Json.xml
+C:\Users\tferrin_admin\source\repos\Bulk Report Tool V3\Bulk Report Tool V3\obj\Debug\Bulk Report Tool V3.csprojAssemblyReference.cache
+C:\Users\tferrin_admin\source\repos\Bulk Report Tool V3\Bulk Report Tool V3\obj\Debug\Bulk_Report_Tool_V3.Form1.resources
+C:\Users\tferrin_admin\source\repos\Bulk Report Tool V3\Bulk Report Tool V3\obj\Debug\Bulk_Report_Tool_V3.Properties.Resources.resources
+C:\Users\tferrin_admin\source\repos\Bulk Report Tool V3\Bulk Report Tool V3\obj\Debug\Bulk Report Tool V3.csproj.GenerateResource.cache
+C:\Users\tferrin_admin\source\repos\Bulk Report Tool V3\Bulk Report Tool V3\obj\Debug\Bulk Report Tool V3.csproj.CoreCompileInputs.cache
+C:\Users\tferrin_admin\source\repos\Bulk Report Tool V3\Bulk Report Tool V3\obj\Debug\Bulk Report Tool V3.csproj.CopyComplete
+C:\Users\tferrin_admin\source\repos\Bulk Report Tool V3\Bulk Report Tool V3\obj\Debug\Bulk Report Tool V3.exe
+C:\Users\tferrin_admin\source\repos\Bulk Report Tool V3\Bulk Report Tool V3\obj\Debug\Bulk Report Tool V3.pdb
+C:\Users\tferrin_admin\source\repos\Bulk Report Tool V3\Bulk Report Tool V3\bin\Debug\System.Management.Automation.dll
+C:\Users\tferrin_admin\source\repos\Bulk Report Tool V3\Bulk Report Tool V3\bin\Debug\Bulk Report Tool V3.exe.manifest
+C:\Users\tferrin_admin\source\repos\Bulk Report Tool V3\Bulk Report Tool V3\bin\Debug\Bulk Report Tool V3.application
+C:\Users\tferrin_admin\source\repos\Bulk Report Tool V3\Bulk Report Tool V3\obj\Debug\Bulk Report Tool V3.exe.manifest
+C:\Users\tferrin_admin\source\repos\Bulk Report Tool V3\Bulk Report Tool V3\obj\Debug\Bulk Report Tool V3.application

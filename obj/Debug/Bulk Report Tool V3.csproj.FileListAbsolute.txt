@@ -17,3 +17,4 @@ C:\Users\tferrin_admin\source\repos\Bulk Report Tool V3\Bulk Report Tool V3\bin\
 C:\Users\tferrin_admin\source\repos\Bulk Report Tool V3\Bulk Report Tool V3\bin\Debug\Bulk Report Tool V3.application
 C:\Users\tferrin_admin\source\repos\Bulk Report Tool V3\Bulk Report Tool V3\obj\Debug\Bulk Report Tool V3.exe.manifest
 C:\Users\tferrin_admin\source\repos\Bulk Report Tool V3\Bulk Report Tool V3\obj\Debug\Bulk Report Tool V3.application
+C:\Users\tferrin_admin\source\repos\Bulk Report Tool V3\Bulk Report Tool V3\bin\Debug\Slack.Webhooks.dll

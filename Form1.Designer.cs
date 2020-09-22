@@ -97,9 +97,18 @@
             this.FindBox = new System.Windows.Forms.TextBox();
             this.SearchAndReplace1 = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.ClearTicketFields = new System.Windows.Forms.Button();
+            this.ExportTicketListOutput = new System.Windows.Forms.Button();
+            this.OpenAllTicketsFromList = new System.Windows.Forms.Button();
+            this.OpenTicketInBrowser = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.SmallTicketBox = new System.Windows.Forms.TextBox();
+            this.TicketCreateHDTicket = new System.Windows.Forms.Button();
             this.TicketSearchJQL = new System.Windows.Forms.Button();
             this.TicketSearchReporter = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
             this.TicketSearchAssignee = new System.Windows.Forms.Button();
+            this.TicketNewHirePull = new System.Windows.Forms.Button();
             this.TicketSearchMultiID = new System.Windows.Forms.Button();
             this.TicketSearchID = new System.Windows.Forms.Button();
             this.TicketGetMyTickets = new System.Windows.Forms.Button();
@@ -109,22 +118,37 @@
             this.TicketListOutputBox = new System.Windows.Forms.ListBox();
             this.TicketInputBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.FixSlack1 = new System.Windows.Forms.Button();
+            this.SlackMsg10 = new System.Windows.Forms.TextBox();
+            this.SlackMsg9 = new System.Windows.Forms.TextBox();
+            this.SlackMsg8 = new System.Windows.Forms.TextBox();
+            this.SlackMsg7 = new System.Windows.Forms.TextBox();
+            this.SlackMsg6 = new System.Windows.Forms.TextBox();
+            this.SlackMsg5 = new System.Windows.Forms.TextBox();
+            this.SlackMsg4 = new System.Windows.Forms.TextBox();
+            this.SlackMsg3 = new System.Windows.Forms.TextBox();
+            this.SlackMsg2 = new System.Windows.Forms.TextBox();
+            this.SlackMsg1 = new System.Windows.Forms.TextBox();
+            this.PullHDSlack = new System.Windows.Forms.Button();
             this.CreateJSSToken = new System.Windows.Forms.Button();
-            this.SmallTicketBox = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.TicketCreateHDTicket = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.TicketNewHirePull = new System.Windows.Forms.Button();
-            this.OpenTicketInBrowser = new System.Windows.Forms.Button();
-            this.OpenAllTicketsFromList = new System.Windows.Forms.Button();
-            this.ExportTicketListOutput = new System.Windows.Forms.Button();
-            this.ClearTicketFields = new System.Windows.Forms.Button();
+            this.SlackRemediationBox = new System.Windows.Forms.TextBox();
+            this.FixSlack2 = new System.Windows.Forms.Button();
+            this.FixSlack4 = new System.Windows.Forms.Button();
+            this.FixSlack3 = new System.Windows.Forms.Button();
+            this.FixSlack8 = new System.Windows.Forms.Button();
+            this.FixSlack7 = new System.Windows.Forms.Button();
+            this.FixSlack6 = new System.Windows.Forms.Button();
+            this.FixSlack5 = new System.Windows.Forms.Button();
+            this.FixSlack10 = new System.Windows.Forms.Button();
+            this.FixSlack9 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.AssetManagement.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // JSSPasswordBox
@@ -200,6 +224,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(12, 47);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -841,6 +866,73 @@
             this.tabPage4.Text = "Ticket Management";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
+            // ClearTicketFields
+            // 
+            this.ClearTicketFields.Location = new System.Drawing.Point(607, 522);
+            this.ClearTicketFields.Name = "ClearTicketFields";
+            this.ClearTicketFields.Size = new System.Drawing.Size(100, 35);
+            this.ClearTicketFields.TabIndex = 41;
+            this.ClearTicketFields.Text = "Clear All Fields";
+            this.ClearTicketFields.UseVisualStyleBackColor = true;
+            this.ClearTicketFields.Click += new System.EventHandler(this.ClearTicketFields_Click);
+            // 
+            // ExportTicketListOutput
+            // 
+            this.ExportTicketListOutput.Location = new System.Drawing.Point(607, 159);
+            this.ExportTicketListOutput.Name = "ExportTicketListOutput";
+            this.ExportTicketListOutput.Size = new System.Drawing.Size(100, 35);
+            this.ExportTicketListOutput.TabIndex = 40;
+            this.ExportTicketListOutput.Text = "Export Ticket List";
+            this.ExportTicketListOutput.UseVisualStyleBackColor = true;
+            this.ExportTicketListOutput.Click += new System.EventHandler(this.ExportTicketListOutput_Click);
+            // 
+            // OpenAllTicketsFromList
+            // 
+            this.OpenAllTicketsFromList.Location = new System.Drawing.Point(607, 87);
+            this.OpenAllTicketsFromList.Name = "OpenAllTicketsFromList";
+            this.OpenAllTicketsFromList.Size = new System.Drawing.Size(100, 35);
+            this.OpenAllTicketsFromList.TabIndex = 39;
+            this.OpenAllTicketsFromList.Text = "Open All Tickets From List";
+            this.OpenAllTicketsFromList.UseVisualStyleBackColor = true;
+            this.OpenAllTicketsFromList.Click += new System.EventHandler(this.OpenAllTicketsFromList_Click);
+            // 
+            // OpenTicketInBrowser
+            // 
+            this.OpenTicketInBrowser.Location = new System.Drawing.Point(607, 46);
+            this.OpenTicketInBrowser.Name = "OpenTicketInBrowser";
+            this.OpenTicketInBrowser.Size = new System.Drawing.Size(100, 35);
+            this.OpenTicketInBrowser.TabIndex = 38;
+            this.OpenTicketInBrowser.Text = "Open Ticket in Browser";
+            this.OpenTicketInBrowser.UseVisualStyleBackColor = true;
+            this.OpenTicketInBrowser.Click += new System.EventHandler(this.OpenTicketInBrowser_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(283, 243);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(101, 13);
+            this.label18.TabIndex = 37;
+            this.label18.Text = "Create New Tickets";
+            // 
+            // SmallTicketBox
+            // 
+            this.SmallTicketBox.Location = new System.Drawing.Point(607, 20);
+            this.SmallTicketBox.Name = "SmallTicketBox";
+            this.SmallTicketBox.ReadOnly = true;
+            this.SmallTicketBox.Size = new System.Drawing.Size(100, 20);
+            this.SmallTicketBox.TabIndex = 14;
+            // 
+            // TicketCreateHDTicket
+            // 
+            this.TicketCreateHDTicket.Location = new System.Drawing.Point(238, 259);
+            this.TicketCreateHDTicket.Name = "TicketCreateHDTicket";
+            this.TicketCreateHDTicket.Size = new System.Drawing.Size(191, 23);
+            this.TicketCreateHDTicket.TabIndex = 36;
+            this.TicketCreateHDTicket.Text = "Create New HD Ticket(s)";
+            this.TicketCreateHDTicket.UseVisualStyleBackColor = true;
+            this.TicketCreateHDTicket.Click += new System.EventHandler(this.TicketCreateHDTicket_Click);
+            // 
             // TicketSearchJQL
             // 
             this.TicketSearchJQL.Location = new System.Drawing.Point(238, 165);
@@ -861,6 +953,15 @@
             this.TicketSearchReporter.UseVisualStyleBackColor = true;
             this.TicketSearchReporter.Click += new System.EventHandler(this.TicketSearchReporter_Click);
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(265, 196);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(136, 13);
+            this.label16.TabIndex = 34;
+            this.label16.Text = "Date Format YYYY-MM-DD";
+            // 
             // TicketSearchAssignee
             // 
             this.TicketSearchAssignee.Location = new System.Drawing.Point(238, 107);
@@ -870,6 +971,16 @@
             this.TicketSearchAssignee.Text = "Search for Tickets by Assignee";
             this.TicketSearchAssignee.UseVisualStyleBackColor = true;
             this.TicketSearchAssignee.Click += new System.EventHandler(this.TicketSearchAssignee_Click);
+            // 
+            // TicketNewHirePull
+            // 
+            this.TicketNewHirePull.Location = new System.Drawing.Point(238, 212);
+            this.TicketNewHirePull.Name = "TicketNewHirePull";
+            this.TicketNewHirePull.Size = new System.Drawing.Size(191, 23);
+            this.TicketNewHirePull.TabIndex = 33;
+            this.TicketNewHirePull.Text = "Search for New Hire Tickets by Date";
+            this.TicketNewHirePull.UseVisualStyleBackColor = true;
+            this.TicketNewHirePull.Click += new System.EventHandler(this.TicketNewHirePull_Click);
             // 
             // TicketSearchMultiID
             // 
@@ -955,6 +1066,147 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "Input";
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.FixSlack10);
+            this.tabPage5.Controls.Add(this.FixSlack9);
+            this.tabPage5.Controls.Add(this.FixSlack8);
+            this.tabPage5.Controls.Add(this.FixSlack7);
+            this.tabPage5.Controls.Add(this.FixSlack6);
+            this.tabPage5.Controls.Add(this.FixSlack5);
+            this.tabPage5.Controls.Add(this.FixSlack4);
+            this.tabPage5.Controls.Add(this.FixSlack3);
+            this.tabPage5.Controls.Add(this.FixSlack2);
+            this.tabPage5.Controls.Add(this.SlackRemediationBox);
+            this.tabPage5.Controls.Add(this.FixSlack1);
+            this.tabPage5.Controls.Add(this.SlackMsg10);
+            this.tabPage5.Controls.Add(this.SlackMsg9);
+            this.tabPage5.Controls.Add(this.SlackMsg8);
+            this.tabPage5.Controls.Add(this.SlackMsg7);
+            this.tabPage5.Controls.Add(this.SlackMsg6);
+            this.tabPage5.Controls.Add(this.SlackMsg5);
+            this.tabPage5.Controls.Add(this.SlackMsg4);
+            this.tabPage5.Controls.Add(this.SlackMsg3);
+            this.tabPage5.Controls.Add(this.SlackMsg2);
+            this.tabPage5.Controls.Add(this.SlackMsg1);
+            this.tabPage5.Controls.Add(this.PullHDSlack);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(1015, 571);
+            this.tabPage5.TabIndex = 5;
+            this.tabPage5.Text = "Slack";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // FixSlack1
+            // 
+            this.FixSlack1.Location = new System.Drawing.Point(315, 36);
+            this.FixSlack1.Name = "FixSlack1";
+            this.FixSlack1.Size = new System.Drawing.Size(66, 47);
+            this.FixSlack1.TabIndex = 12;
+            this.FixSlack1.Text = "Remediate";
+            this.FixSlack1.UseVisualStyleBackColor = true;
+            this.FixSlack1.Click += new System.EventHandler(this.FixSlack1_Click);
+            // 
+            // SlackMsg10
+            // 
+            this.SlackMsg10.Location = new System.Drawing.Point(10, 513);
+            this.SlackMsg10.Multiline = true;
+            this.SlackMsg10.Name = "SlackMsg10";
+            this.SlackMsg10.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.SlackMsg10.Size = new System.Drawing.Size(299, 47);
+            this.SlackMsg10.TabIndex = 10;
+            // 
+            // SlackMsg9
+            // 
+            this.SlackMsg9.Location = new System.Drawing.Point(10, 460);
+            this.SlackMsg9.Multiline = true;
+            this.SlackMsg9.Name = "SlackMsg9";
+            this.SlackMsg9.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.SlackMsg9.Size = new System.Drawing.Size(299, 47);
+            this.SlackMsg9.TabIndex = 9;
+            // 
+            // SlackMsg8
+            // 
+            this.SlackMsg8.Location = new System.Drawing.Point(10, 407);
+            this.SlackMsg8.Multiline = true;
+            this.SlackMsg8.Name = "SlackMsg8";
+            this.SlackMsg8.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.SlackMsg8.Size = new System.Drawing.Size(299, 47);
+            this.SlackMsg8.TabIndex = 8;
+            // 
+            // SlackMsg7
+            // 
+            this.SlackMsg7.Location = new System.Drawing.Point(10, 354);
+            this.SlackMsg7.Multiline = true;
+            this.SlackMsg7.Name = "SlackMsg7";
+            this.SlackMsg7.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.SlackMsg7.Size = new System.Drawing.Size(299, 47);
+            this.SlackMsg7.TabIndex = 7;
+            // 
+            // SlackMsg6
+            // 
+            this.SlackMsg6.Location = new System.Drawing.Point(10, 301);
+            this.SlackMsg6.Multiline = true;
+            this.SlackMsg6.Name = "SlackMsg6";
+            this.SlackMsg6.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.SlackMsg6.Size = new System.Drawing.Size(299, 47);
+            this.SlackMsg6.TabIndex = 6;
+            // 
+            // SlackMsg5
+            // 
+            this.SlackMsg5.Location = new System.Drawing.Point(10, 248);
+            this.SlackMsg5.Multiline = true;
+            this.SlackMsg5.Name = "SlackMsg5";
+            this.SlackMsg5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.SlackMsg5.Size = new System.Drawing.Size(299, 47);
+            this.SlackMsg5.TabIndex = 5;
+            // 
+            // SlackMsg4
+            // 
+            this.SlackMsg4.Location = new System.Drawing.Point(10, 195);
+            this.SlackMsg4.Multiline = true;
+            this.SlackMsg4.Name = "SlackMsg4";
+            this.SlackMsg4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.SlackMsg4.Size = new System.Drawing.Size(299, 47);
+            this.SlackMsg4.TabIndex = 4;
+            // 
+            // SlackMsg3
+            // 
+            this.SlackMsg3.Location = new System.Drawing.Point(10, 142);
+            this.SlackMsg3.Multiline = true;
+            this.SlackMsg3.Name = "SlackMsg3";
+            this.SlackMsg3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.SlackMsg3.Size = new System.Drawing.Size(299, 47);
+            this.SlackMsg3.TabIndex = 3;
+            // 
+            // SlackMsg2
+            // 
+            this.SlackMsg2.Location = new System.Drawing.Point(10, 89);
+            this.SlackMsg2.Multiline = true;
+            this.SlackMsg2.Name = "SlackMsg2";
+            this.SlackMsg2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.SlackMsg2.Size = new System.Drawing.Size(299, 47);
+            this.SlackMsg2.TabIndex = 2;
+            // 
+            // SlackMsg1
+            // 
+            this.SlackMsg1.Location = new System.Drawing.Point(10, 36);
+            this.SlackMsg1.Multiline = true;
+            this.SlackMsg1.Name = "SlackMsg1";
+            this.SlackMsg1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.SlackMsg1.Size = new System.Drawing.Size(299, 47);
+            this.SlackMsg1.TabIndex = 1;
+            // 
+            // PullHDSlack
+            // 
+            this.PullHDSlack.Location = new System.Drawing.Point(10, 7);
+            this.PullHDSlack.Name = "PullHDSlack";
+            this.PullHDSlack.Size = new System.Drawing.Size(106, 23);
+            this.PullHDSlack.TabIndex = 0;
+            this.PullHDSlack.Text = "Get HD Messages";
+            this.PullHDSlack.UseVisualStyleBackColor = true;
+            this.PullHDSlack.Click += new System.EventHandler(this.PullHDSlack_Click);
+            // 
             // CreateJSSToken
             // 
             this.CreateJSSToken.Location = new System.Drawing.Point(555, 12);
@@ -965,91 +1217,104 @@
             this.CreateJSSToken.UseVisualStyleBackColor = true;
             this.CreateJSSToken.Click += new System.EventHandler(this.CreateJSSToken_Click);
             // 
-            // SmallTicketBox
+            // SlackRemediationBox
             // 
-            this.SmallTicketBox.Location = new System.Drawing.Point(607, 20);
-            this.SmallTicketBox.Name = "SmallTicketBox";
-            this.SmallTicketBox.ReadOnly = true;
-            this.SmallTicketBox.Size = new System.Drawing.Size(100, 20);
-            this.SmallTicketBox.TabIndex = 14;
+            this.SlackRemediationBox.Location = new System.Drawing.Point(387, 36);
+            this.SlackRemediationBox.Multiline = true;
+            this.SlackRemediationBox.Name = "SlackRemediationBox";
+            this.SlackRemediationBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.SlackRemediationBox.Size = new System.Drawing.Size(414, 524);
+            this.SlackRemediationBox.TabIndex = 13;
             // 
-            // label18
+            // FixSlack2
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(283, 243);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(101, 13);
-            this.label18.TabIndex = 37;
-            this.label18.Text = "Create New Tickets";
+            this.FixSlack2.Location = new System.Drawing.Point(315, 89);
+            this.FixSlack2.Name = "FixSlack2";
+            this.FixSlack2.Size = new System.Drawing.Size(66, 47);
+            this.FixSlack2.TabIndex = 14;
+            this.FixSlack2.Text = "Remediate";
+            this.FixSlack2.UseVisualStyleBackColor = true;
+            this.FixSlack2.Click += new System.EventHandler(this.FixSlack2_Click);
             // 
-            // TicketCreateHDTicket
+            // FixSlack4
             // 
-            this.TicketCreateHDTicket.Location = new System.Drawing.Point(238, 259);
-            this.TicketCreateHDTicket.Name = "TicketCreateHDTicket";
-            this.TicketCreateHDTicket.Size = new System.Drawing.Size(191, 23);
-            this.TicketCreateHDTicket.TabIndex = 36;
-            this.TicketCreateHDTicket.Text = "Create New HD Ticket(s)";
-            this.TicketCreateHDTicket.UseVisualStyleBackColor = true;
-            this.TicketCreateHDTicket.Click += new System.EventHandler(this.TicketCreateHDTicket_Click);
+            this.FixSlack4.Location = new System.Drawing.Point(315, 195);
+            this.FixSlack4.Name = "FixSlack4";
+            this.FixSlack4.Size = new System.Drawing.Size(66, 47);
+            this.FixSlack4.TabIndex = 16;
+            this.FixSlack4.Text = "Remediate";
+            this.FixSlack4.UseVisualStyleBackColor = true;
+            this.FixSlack4.Click += new System.EventHandler(this.FixSlack4_Click);
             // 
-            // label16
+            // FixSlack3
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(265, 196);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(136, 13);
-            this.label16.TabIndex = 34;
-            this.label16.Text = "Date Format YYYY-MM-DD";
+            this.FixSlack3.Location = new System.Drawing.Point(315, 142);
+            this.FixSlack3.Name = "FixSlack3";
+            this.FixSlack3.Size = new System.Drawing.Size(66, 47);
+            this.FixSlack3.TabIndex = 15;
+            this.FixSlack3.Text = "Remediate";
+            this.FixSlack3.UseVisualStyleBackColor = true;
+            this.FixSlack3.Click += new System.EventHandler(this.FixSlack3_Click);
             // 
-            // TicketNewHirePull
+            // FixSlack8
             // 
-            this.TicketNewHirePull.Location = new System.Drawing.Point(238, 212);
-            this.TicketNewHirePull.Name = "TicketNewHirePull";
-            this.TicketNewHirePull.Size = new System.Drawing.Size(191, 23);
-            this.TicketNewHirePull.TabIndex = 33;
-            this.TicketNewHirePull.Text = "Search for New Hire Tickets by Date";
-            this.TicketNewHirePull.UseVisualStyleBackColor = true;
-            this.TicketNewHirePull.Click += new System.EventHandler(this.TicketNewHirePull_Click);
+            this.FixSlack8.Location = new System.Drawing.Point(315, 407);
+            this.FixSlack8.Name = "FixSlack8";
+            this.FixSlack8.Size = new System.Drawing.Size(66, 47);
+            this.FixSlack8.TabIndex = 20;
+            this.FixSlack8.Text = "Remediate";
+            this.FixSlack8.UseVisualStyleBackColor = true;
+            this.FixSlack8.Click += new System.EventHandler(this.FixSlack8_Click);
             // 
-            // OpenTicketInBrowser
+            // FixSlack7
             // 
-            this.OpenTicketInBrowser.Location = new System.Drawing.Point(607, 46);
-            this.OpenTicketInBrowser.Name = "OpenTicketInBrowser";
-            this.OpenTicketInBrowser.Size = new System.Drawing.Size(100, 35);
-            this.OpenTicketInBrowser.TabIndex = 38;
-            this.OpenTicketInBrowser.Text = "Open Ticket in Browser";
-            this.OpenTicketInBrowser.UseVisualStyleBackColor = true;
-            this.OpenTicketInBrowser.Click += new System.EventHandler(this.OpenTicketInBrowser_Click);
+            this.FixSlack7.Location = new System.Drawing.Point(315, 354);
+            this.FixSlack7.Name = "FixSlack7";
+            this.FixSlack7.Size = new System.Drawing.Size(66, 47);
+            this.FixSlack7.TabIndex = 19;
+            this.FixSlack7.Text = "Remediate";
+            this.FixSlack7.UseVisualStyleBackColor = true;
+            this.FixSlack7.Click += new System.EventHandler(this.FixSlack7_Click);
             // 
-            // OpenAllTicketsFromList
+            // FixSlack6
             // 
-            this.OpenAllTicketsFromList.Location = new System.Drawing.Point(607, 87);
-            this.OpenAllTicketsFromList.Name = "OpenAllTicketsFromList";
-            this.OpenAllTicketsFromList.Size = new System.Drawing.Size(100, 35);
-            this.OpenAllTicketsFromList.TabIndex = 39;
-            this.OpenAllTicketsFromList.Text = "Open All Tickets From List";
-            this.OpenAllTicketsFromList.UseVisualStyleBackColor = true;
-            this.OpenAllTicketsFromList.Click += new System.EventHandler(this.OpenAllTicketsFromList_Click);
+            this.FixSlack6.Location = new System.Drawing.Point(315, 301);
+            this.FixSlack6.Name = "FixSlack6";
+            this.FixSlack6.Size = new System.Drawing.Size(66, 47);
+            this.FixSlack6.TabIndex = 18;
+            this.FixSlack6.Text = "Remediate";
+            this.FixSlack6.UseVisualStyleBackColor = true;
+            this.FixSlack6.Click += new System.EventHandler(this.FixSlack6_Click);
             // 
-            // ExportTicketListOutput
+            // FixSlack5
             // 
-            this.ExportTicketListOutput.Location = new System.Drawing.Point(607, 159);
-            this.ExportTicketListOutput.Name = "ExportTicketListOutput";
-            this.ExportTicketListOutput.Size = new System.Drawing.Size(100, 35);
-            this.ExportTicketListOutput.TabIndex = 40;
-            this.ExportTicketListOutput.Text = "Export Ticket List";
-            this.ExportTicketListOutput.UseVisualStyleBackColor = true;
-            this.ExportTicketListOutput.Click += new System.EventHandler(this.ExportTicketListOutput_Click);
+            this.FixSlack5.Location = new System.Drawing.Point(315, 248);
+            this.FixSlack5.Name = "FixSlack5";
+            this.FixSlack5.Size = new System.Drawing.Size(66, 47);
+            this.FixSlack5.TabIndex = 17;
+            this.FixSlack5.Text = "Remediate";
+            this.FixSlack5.UseVisualStyleBackColor = true;
+            this.FixSlack5.Click += new System.EventHandler(this.FixSlack5_Click);
             // 
-            // ClearTicketFields
+            // FixSlack10
             // 
-            this.ClearTicketFields.Location = new System.Drawing.Point(607, 522);
-            this.ClearTicketFields.Name = "ClearTicketFields";
-            this.ClearTicketFields.Size = new System.Drawing.Size(100, 35);
-            this.ClearTicketFields.TabIndex = 41;
-            this.ClearTicketFields.Text = "Clear All Fields";
-            this.ClearTicketFields.UseVisualStyleBackColor = true;
-            this.ClearTicketFields.Click += new System.EventHandler(this.ClearTicketFields_Click);
+            this.FixSlack10.Location = new System.Drawing.Point(315, 513);
+            this.FixSlack10.Name = "FixSlack10";
+            this.FixSlack10.Size = new System.Drawing.Size(66, 47);
+            this.FixSlack10.TabIndex = 22;
+            this.FixSlack10.Text = "Remediate";
+            this.FixSlack10.UseVisualStyleBackColor = true;
+            this.FixSlack10.Click += new System.EventHandler(this.FixSlack10_Click);
+            // 
+            // FixSlack9
+            // 
+            this.FixSlack9.Location = new System.Drawing.Point(315, 460);
+            this.FixSlack9.Name = "FixSlack9";
+            this.FixSlack9.Size = new System.Drawing.Size(66, 47);
+            this.FixSlack9.TabIndex = 21;
+            this.FixSlack9.Text = "Remediate";
+            this.FixSlack9.UseVisualStyleBackColor = true;
+            this.FixSlack9.Click += new System.EventHandler(this.FixSlack9_Click);
             // 
             // Form1
             // 
@@ -1079,6 +1344,8 @@
             this.tabPage3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1177,6 +1444,29 @@
         private System.Windows.Forms.Button OpenAllTicketsFromList;
         private System.Windows.Forms.Button ExportTicketListOutput;
         private System.Windows.Forms.Button ClearTicketFields;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Button PullHDSlack;
+        private System.Windows.Forms.TextBox SlackMsg1;
+        private System.Windows.Forms.TextBox SlackMsg10;
+        private System.Windows.Forms.TextBox SlackMsg9;
+        private System.Windows.Forms.TextBox SlackMsg8;
+        private System.Windows.Forms.TextBox SlackMsg7;
+        private System.Windows.Forms.TextBox SlackMsg6;
+        private System.Windows.Forms.TextBox SlackMsg5;
+        private System.Windows.Forms.TextBox SlackMsg4;
+        private System.Windows.Forms.TextBox SlackMsg3;
+        private System.Windows.Forms.TextBox SlackMsg2;
+        private System.Windows.Forms.Button FixSlack1;
+        private System.Windows.Forms.TextBox SlackRemediationBox;
+        private System.Windows.Forms.Button FixSlack10;
+        private System.Windows.Forms.Button FixSlack9;
+        private System.Windows.Forms.Button FixSlack8;
+        private System.Windows.Forms.Button FixSlack7;
+        private System.Windows.Forms.Button FixSlack6;
+        private System.Windows.Forms.Button FixSlack5;
+        private System.Windows.Forms.Button FixSlack4;
+        private System.Windows.Forms.Button FixSlack3;
+        private System.Windows.Forms.Button FixSlack2;
     }
 }
 

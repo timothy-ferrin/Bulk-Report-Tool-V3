@@ -21,6 +21,7 @@ using System.Web;
 using System.Reflection;
 using System.Globalization;
 using System.Text.RegularExpressions;
+using Slack.Webhooks;
 
 namespace Bulk_Report_Tool_V3
 {
@@ -35,6 +36,7 @@ namespace Bulk_Report_Tool_V3
         private List<FullCollection> FullCollectionList = new List<FullCollection>();
         public string JssToken = "";
         public string JssAssetData = "";
+        public string SlackData = "";
 
 
         private void AssetCheck_Click(object sender, EventArgs e)
@@ -1637,6 +1639,198 @@ namespace Bulk_Report_Tool_V3
 
             deserialiseJSONTicket(strResponse);
             SmallTicketBox.Text = Convert.ToString(TicketListOutputBox.SelectedItem).Split(' ')[0].Trim();
+        }
+
+        private void PullHDSlack_Click(object sender, EventArgs e)
+        {
+            //successfully pushed message to slack channel via slack api integration using this:
+            //--------------------
+            //var slackClient = new SlackClient("https://hooks.slack.com/services/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");
+            //var slackMessage = new SlackMessage
+            //{
+            //    Text = "Testing this from a C# program."
+            //};
+            //slackClient.Post(slackMessage);
+            //--------------------
+            //https://slack.com/api/conversations.history?token=xoxb-101335543696-1378130353059-XCnpHMXK2mG4kgVJuWENfJJa&channel=C01B12DGMUM
+            string tempText = "";
+            string JSSURL = "https://slack.com/api/conversations.history?token=xoxb-101335543696-1378130353059-XCnpHMXK2mG4kgVJuWENfJJa&channel=CMESA6V2R&limit=10";
+            RestClient rClient = new RestClient();
+            rClient.endPoint = JSSURL;
+            rClient.authTech = autheticationTechnique.RollYourOwn;
+            rClient.authType = authenticationType.Basic;
+            rClient.userName = JSSUsernameBox.Text;
+            rClient.userPassword = JSSPasswordBox.Text;
+            string strResponse = string.Empty;
+            strResponse = rClient.makeRequest();
+            SlackData = strResponse;
+            var jPerson = JsonConvert.DeserializeObject<dynamic>(strResponse);
+            try { tempText = Convert.ToString(jPerson.messages[0].user); } catch { tempText = ""; }
+            tempText = CollectUsernameFromSlackID(tempText);
+            SlackMsg1.Text = $"{tempText}:\r\n";
+            try { tempText = Convert.ToString(jPerson.messages[0].text); } catch { tempText = ""; }
+            SlackMsg1.Text += $"{tempText}";
+            try { tempText = Convert.ToString(jPerson.messages[1].user); } catch { tempText = ""; }
+            tempText = CollectUsernameFromSlackID(tempText);
+            SlackMsg2.Text = $"{tempText}:\r\n";
+            try { tempText = Convert.ToString(jPerson.messages[1].text); } catch { tempText = ""; }
+            SlackMsg2.Text += $"{tempText}";
+            try { tempText = Convert.ToString(jPerson.messages[2].user); } catch { tempText = ""; }
+            tempText = CollectUsernameFromSlackID(tempText);
+            SlackMsg3.Text = $"{tempText}:\r\n";
+            try { tempText = Convert.ToString(jPerson.messages[2].text); } catch { tempText = ""; }
+            SlackMsg3.Text += $"{tempText}";
+            try { tempText = Convert.ToString(jPerson.messages[3].user); } catch { tempText = ""; }
+            tempText = CollectUsernameFromSlackID(tempText);
+            SlackMsg4.Text = $"{tempText}:\r\n";
+            try { tempText = Convert.ToString(jPerson.messages[3].text); } catch { tempText = ""; }
+            SlackMsg4.Text += $"{tempText}";
+            try { tempText = Convert.ToString(jPerson.messages[4].user); } catch { tempText = ""; }
+            tempText = CollectUsernameFromSlackID(tempText);
+            SlackMsg5.Text = $"{tempText}:\r\n";
+            try { tempText = Convert.ToString(jPerson.messages[4].text); } catch { tempText = ""; }
+            SlackMsg5.Text += $"{tempText}";
+            try { tempText = Convert.ToString(jPerson.messages[5].user); } catch { tempText = ""; }
+            tempText = CollectUsernameFromSlackID(tempText);
+            SlackMsg6.Text = $"{tempText}:\r\n";
+            try { tempText = Convert.ToString(jPerson.messages[5].text); } catch { tempText = ""; }
+            SlackMsg6.Text += $"{tempText}";
+            try { tempText = Convert.ToString(jPerson.messages[6].user); } catch { tempText = ""; }
+            tempText = CollectUsernameFromSlackID(tempText);
+            SlackMsg7.Text = $"{tempText}:\r\n";
+            try { tempText = Convert.ToString(jPerson.messages[6].text); } catch { tempText = ""; }
+            SlackMsg7.Text += $"{tempText}";
+            try { tempText = Convert.ToString(jPerson.messages[7].user); } catch { tempText = ""; }
+            tempText = CollectUsernameFromSlackID(tempText);
+            SlackMsg8.Text = $"{tempText}:\r\n";
+            try { tempText = Convert.ToString(jPerson.messages[7].text); } catch { tempText = ""; }
+            SlackMsg8.Text += $"{tempText}";
+            try { tempText = Convert.ToString(jPerson.messages[8].user); } catch { tempText = ""; }
+            tempText = CollectUsernameFromSlackID(tempText);
+            SlackMsg9.Text = $"{tempText}:\r\n";
+            try { tempText = Convert.ToString(jPerson.messages[8].text); } catch { tempText = ""; }
+            SlackMsg9.Text += $"{tempText}";
+            try { tempText = Convert.ToString(jPerson.messages[9].user); } catch { tempText = ""; }
+            tempText = CollectUsernameFromSlackID(tempText);
+            SlackMsg10.Text = $"{tempText}:\r\n";
+            try { tempText = Convert.ToString(jPerson.messages[9].text); } catch { tempText = ""; }
+            SlackMsg10.Text += $"{tempText}";
+        }
+        private string CollectUsernameFromSlackID(string SlackID)
+        {
+            //To get the user from user id:
+            //https://slack.com/api/users.profile.get?token=xoxb-101335543696-1378130353059-XCnpHMXK2mG4kgVJuWENfJJa&user=WHWJ3B9ED
+
+            string ToReturn = "";
+            string JSSURL = "https://slack.com/api/users.profile.get?token=xoxb-101335543696-1378130353059-XCnpHMXK2mG4kgVJuWENfJJa&user=" + SlackID;
+            RestClient rClient = new RestClient();
+            rClient.endPoint = JSSURL;
+            rClient.authTech = autheticationTechnique.RollYourOwn;
+            rClient.authType = authenticationType.Basic;
+            rClient.userName = JSSUsernameBox.Text;
+            rClient.userPassword = JSSPasswordBox.Text;
+            string strResponse = string.Empty;
+            strResponse = rClient.makeRequest();
+            var jPerson = JsonConvert.DeserializeObject<dynamic>(strResponse);
+            try { ToReturn = Convert.ToString(jPerson.profile.real_name); } catch { }
+            return ToReturn;
+        }
+
+        private void FixSlack1_Click(object sender, EventArgs e)
+        {
+            PushSlackOutput(1);
+        }
+        private void PushSlackOutput(int ButtonNumber)
+        {
+            string MyUser = "";
+            try
+            {
+                var jPerson = JsonConvert.DeserializeObject<dynamic>(SlackData);
+                string user = Convert.ToString(jPerson.messages[ButtonNumber - 1].user);
+                MyUser = CollectUsernameFromSlackID(user);
+            }
+            catch { }
+            List<string> tempUN = GetUsernameFromFullname(MyUser);
+            SlackRemediationBox.Text = $"{MyUser}\r\n{tempUN[0]}\r\n";
+            string QuickExport = "";
+            string temp = "";
+            foreach (string username in tempUN)
+            {
+                QuickExport += $"Username: {username.Trim()}\r\n";
+                temp = GetDSInfo(username.Trim(), "Department").Trim();
+                QuickExport += $"Department: {temp}\r\n";
+                temp = GetDSInfo(username.Trim(), "EmailAddress").Trim();
+                QuickExport += $"Email Address: {temp}\r\n";
+                temp = GetDSInfo(username.Trim(), "EmployeeID").Trim();
+                QuickExport += $"Employee ID: {temp}\r\n";
+                temp = GetDSInfo(username.Trim(), "FullName").Trim();
+                QuickExport += $"Full Name: {temp}\r\n";
+                temp = GetDSInfo(username.Trim(), "IsAccountLocked").Trim();
+                QuickExport += $"Account Locked? {temp}\r\n";
+                temp = GetDSInfo(username.Trim(), "LastFailedLogin").Trim();
+                QuickExport += $"Last Failed Login: {temp}\r\n";
+                temp = GetDSInfo(username.Trim(), "LastLogin").Trim();
+                QuickExport += $"Last Login: {temp}\r\n";
+                temp = GetDSInfo(username.Trim(), "Manager").Trim();
+                try { temp = temp.Split(',')[0].Split('=')[1]; } catch { }
+                QuickExport += $"Manager: {temp}\r\n";
+                temp = GetDSInfo(username.Trim(), "OfficeLocations").Trim();
+                QuickExport += $"Office Location: {temp}\r\n";
+                temp = GetDSInfo(username.Trim(), "PasswordExpirationDate").Trim();
+                QuickExport += $"Password Expiration Date: {temp}\r\n";
+                temp = GetDSInfo(username.Trim(), "PasswordLastChanged").Trim();
+                QuickExport += $"Password Last Changed: {temp}\r\n";
+                temp = GetDSInfo(username.Trim(), "Title").Trim();
+                QuickExport += $"Title: {temp}\r\n";
+                temp = GetDSInfo(username.Trim(), "AdsPath").Trim();
+                QuickExport += $"OU Path: {temp}\r\n\r\n";
+            }
+            SlackRemediationBox.Text += QuickExport;
+        }
+
+        private void FixSlack2_Click(object sender, EventArgs e)
+        {
+            PushSlackOutput(2);
+        }
+
+        private void FixSlack3_Click(object sender, EventArgs e)
+        {
+            PushSlackOutput(3);
+        }
+
+        private void FixSlack4_Click(object sender, EventArgs e)
+        {
+            PushSlackOutput(4);
+        }
+
+        private void FixSlack5_Click(object sender, EventArgs e)
+        {
+            PushSlackOutput(5);
+        }
+
+        private void FixSlack6_Click(object sender, EventArgs e)
+        {
+            PushSlackOutput(6);
+        }
+
+        private void FixSlack7_Click(object sender, EventArgs e)
+        {
+            PushSlackOutput(7);
+        }
+
+        private void FixSlack8_Click(object sender, EventArgs e)
+        {
+            PushSlackOutput(8);
+        }
+
+        private void FixSlack9_Click(object sender, EventArgs e)
+        {
+            PushSlackOutput(9);
+        }
+
+        private void FixSlack10_Click(object sender, EventArgs e)
+        {
+            PushSlackOutput(10);
         }
     }
 }

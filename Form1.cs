@@ -348,6 +348,7 @@ namespace Bulk_Report_Tool_V3
             GenericAssetList = NewGenericAssetList;
             AssetListType = NewAssetListType;
         }
+
         private void CollectAssetTagsBySerialNumber()
         {
             //remakes the GenericAssetList and AssetListType lists, getting Asset Tags from Serial Numbers.
@@ -1742,6 +1743,7 @@ namespace Bulk_Report_Tool_V3
         }
         private void PushSlackOutput(int ButtonNumber)
         {
+            SlackAssetOutput.Text = "";
             string MyUser = "";
             try
             {
@@ -1751,10 +1753,20 @@ namespace Bulk_Report_Tool_V3
             }
             catch { }
             List<string> tempUN = GetUsernameFromFullname(MyUser);
-            SlackRemediationBox.Text = $"{MyUser}\r\n{tempUN[0]}\r\n";
+            List<string> tempUN2 = new List<string>();
+            SlackRemediationBox.Text = $"{MyUser}\r\n";
+            foreach (string s in tempUN[0].Split('\n'))
+            {
+                if (s.Trim() != "")
+                {
+                    tempUN2.Add(s.Trim());
+                    SlackRemediationBox.Text += $"{s.Trim()}\r\n";
+                }
+            }
+            SlackRemediationBox.Text += "\r\n";
             string QuickExport = "";
             string temp = "";
-            foreach (string username in tempUN)
+            foreach (string username in tempUN2)
             {
                 QuickExport += $"Username: {username.Trim()}\r\n";
                 temp = GetDSInfo(username.Trim(), "Department").Trim();
@@ -1784,8 +1796,51 @@ namespace Bulk_Report_Tool_V3
                 QuickExport += $"Title: {temp}\r\n";
                 temp = GetDSInfo(username.Trim(), "AdsPath").Trim();
                 QuickExport += $"OU Path: {temp}\r\n\r\n";
+                List<string> AssetList = UsernameToTags(username);
+                foreach(string s in AssetList)
+                {
+                    if (!(s.Contains("Unable to find")) && !(s.Contains("We had a problem")))
+                    {
+                        SlackAssetOutput.Text += $"{s.Trim()}\r\n";
+                    }
+                }
             }
             SlackRemediationBox.Text += QuickExport;
+        }
+        private List<string> UsernameToTags(string username)
+        {
+            List<string> toReturn = new List<string>();
+            string strResponse = "";
+            string MyURL = $"https://jira.tlcinternal.com/rest/insight/1.0/iql/objects?objectSchemaId=1&iql=objectobject%20HAVING%20outboundReferences(" + '\u0022' + "Username" + '\u0022' + "%20=%20" + username.Trim() + ")";
+            strResponse = JiraGetRequest(MyURL);
+            try
+            {
+                var jPerson = JsonConvert.DeserializeObject<dynamic>(strResponse);
+                int count = 0;
+                for (int j = 0; j < Convert.ToInt32(jPerson.toIndex); j++)
+                {
+                    try
+                    {
+                        if (jPerson.objectEntries[j].objectType.name != "Employee" && jPerson.objectEntries[j].objectType.name != "Phone" && jPerson.objectEntries[j].objectType.name != "Project")
+                        {
+                            string temp1 = Convert.ToString(jPerson.objectEntries[j].label);
+                            temp1 = temp1.Split(' ')[0].Trim();
+                            toReturn.Add(temp1);
+                            count++;
+                        }
+                    }
+                    catch { };
+                }
+                if (count == 0)
+                {
+                    toReturn.Add($"Unable to find relevant asset for {username}.\r\n");
+                }
+            }
+            catch (Exception ex)
+            {
+                toReturn.Add($"We had a problem procuring asset tags from {username}: " + ex.Message.ToString() + "\r\n");
+            }
+            return toReturn;
         }
 
         private void FixSlack2_Click(object sender, EventArgs e)

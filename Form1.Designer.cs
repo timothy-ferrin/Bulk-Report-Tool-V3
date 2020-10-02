@@ -119,6 +119,16 @@
             this.TicketInputBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.FixSlack10 = new System.Windows.Forms.Button();
+            this.FixSlack9 = new System.Windows.Forms.Button();
+            this.FixSlack8 = new System.Windows.Forms.Button();
+            this.FixSlack7 = new System.Windows.Forms.Button();
+            this.FixSlack6 = new System.Windows.Forms.Button();
+            this.FixSlack5 = new System.Windows.Forms.Button();
+            this.FixSlack4 = new System.Windows.Forms.Button();
+            this.FixSlack3 = new System.Windows.Forms.Button();
+            this.FixSlack2 = new System.Windows.Forms.Button();
+            this.SlackRemediationBox = new System.Windows.Forms.TextBox();
             this.FixSlack1 = new System.Windows.Forms.Button();
             this.SlackMsg10 = new System.Windows.Forms.TextBox();
             this.SlackMsg9 = new System.Windows.Forms.TextBox();
@@ -132,16 +142,7 @@
             this.SlackMsg1 = new System.Windows.Forms.TextBox();
             this.PullHDSlack = new System.Windows.Forms.Button();
             this.CreateJSSToken = new System.Windows.Forms.Button();
-            this.SlackRemediationBox = new System.Windows.Forms.TextBox();
-            this.FixSlack2 = new System.Windows.Forms.Button();
-            this.FixSlack4 = new System.Windows.Forms.Button();
-            this.FixSlack3 = new System.Windows.Forms.Button();
-            this.FixSlack8 = new System.Windows.Forms.Button();
-            this.FixSlack7 = new System.Windows.Forms.Button();
-            this.FixSlack6 = new System.Windows.Forms.Button();
-            this.FixSlack5 = new System.Windows.Forms.Button();
-            this.FixSlack10 = new System.Windows.Forms.Button();
-            this.FixSlack9 = new System.Windows.Forms.Button();
+            this.SlackAssetOutput = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.AssetManagement.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -1068,6 +1069,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.SlackAssetOutput);
             this.tabPage5.Controls.Add(this.FixSlack10);
             this.tabPage5.Controls.Add(this.FixSlack9);
             this.tabPage5.Controls.Add(this.FixSlack8);
@@ -1096,6 +1098,105 @@
             this.tabPage5.TabIndex = 5;
             this.tabPage5.Text = "Slack";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // FixSlack10
+            // 
+            this.FixSlack10.Location = new System.Drawing.Point(315, 513);
+            this.FixSlack10.Name = "FixSlack10";
+            this.FixSlack10.Size = new System.Drawing.Size(66, 47);
+            this.FixSlack10.TabIndex = 22;
+            this.FixSlack10.Text = "Remediate";
+            this.FixSlack10.UseVisualStyleBackColor = true;
+            this.FixSlack10.Click += new System.EventHandler(this.FixSlack10_Click);
+            // 
+            // FixSlack9
+            // 
+            this.FixSlack9.Location = new System.Drawing.Point(315, 460);
+            this.FixSlack9.Name = "FixSlack9";
+            this.FixSlack9.Size = new System.Drawing.Size(66, 47);
+            this.FixSlack9.TabIndex = 21;
+            this.FixSlack9.Text = "Remediate";
+            this.FixSlack9.UseVisualStyleBackColor = true;
+            this.FixSlack9.Click += new System.EventHandler(this.FixSlack9_Click);
+            // 
+            // FixSlack8
+            // 
+            this.FixSlack8.Location = new System.Drawing.Point(315, 407);
+            this.FixSlack8.Name = "FixSlack8";
+            this.FixSlack8.Size = new System.Drawing.Size(66, 47);
+            this.FixSlack8.TabIndex = 20;
+            this.FixSlack8.Text = "Remediate";
+            this.FixSlack8.UseVisualStyleBackColor = true;
+            this.FixSlack8.Click += new System.EventHandler(this.FixSlack8_Click);
+            // 
+            // FixSlack7
+            // 
+            this.FixSlack7.Location = new System.Drawing.Point(315, 354);
+            this.FixSlack7.Name = "FixSlack7";
+            this.FixSlack7.Size = new System.Drawing.Size(66, 47);
+            this.FixSlack7.TabIndex = 19;
+            this.FixSlack7.Text = "Remediate";
+            this.FixSlack7.UseVisualStyleBackColor = true;
+            this.FixSlack7.Click += new System.EventHandler(this.FixSlack7_Click);
+            // 
+            // FixSlack6
+            // 
+            this.FixSlack6.Location = new System.Drawing.Point(315, 301);
+            this.FixSlack6.Name = "FixSlack6";
+            this.FixSlack6.Size = new System.Drawing.Size(66, 47);
+            this.FixSlack6.TabIndex = 18;
+            this.FixSlack6.Text = "Remediate";
+            this.FixSlack6.UseVisualStyleBackColor = true;
+            this.FixSlack6.Click += new System.EventHandler(this.FixSlack6_Click);
+            // 
+            // FixSlack5
+            // 
+            this.FixSlack5.Location = new System.Drawing.Point(315, 248);
+            this.FixSlack5.Name = "FixSlack5";
+            this.FixSlack5.Size = new System.Drawing.Size(66, 47);
+            this.FixSlack5.TabIndex = 17;
+            this.FixSlack5.Text = "Remediate";
+            this.FixSlack5.UseVisualStyleBackColor = true;
+            this.FixSlack5.Click += new System.EventHandler(this.FixSlack5_Click);
+            // 
+            // FixSlack4
+            // 
+            this.FixSlack4.Location = new System.Drawing.Point(315, 195);
+            this.FixSlack4.Name = "FixSlack4";
+            this.FixSlack4.Size = new System.Drawing.Size(66, 47);
+            this.FixSlack4.TabIndex = 16;
+            this.FixSlack4.Text = "Remediate";
+            this.FixSlack4.UseVisualStyleBackColor = true;
+            this.FixSlack4.Click += new System.EventHandler(this.FixSlack4_Click);
+            // 
+            // FixSlack3
+            // 
+            this.FixSlack3.Location = new System.Drawing.Point(315, 142);
+            this.FixSlack3.Name = "FixSlack3";
+            this.FixSlack3.Size = new System.Drawing.Size(66, 47);
+            this.FixSlack3.TabIndex = 15;
+            this.FixSlack3.Text = "Remediate";
+            this.FixSlack3.UseVisualStyleBackColor = true;
+            this.FixSlack3.Click += new System.EventHandler(this.FixSlack3_Click);
+            // 
+            // FixSlack2
+            // 
+            this.FixSlack2.Location = new System.Drawing.Point(315, 89);
+            this.FixSlack2.Name = "FixSlack2";
+            this.FixSlack2.Size = new System.Drawing.Size(66, 47);
+            this.FixSlack2.TabIndex = 14;
+            this.FixSlack2.Text = "Remediate";
+            this.FixSlack2.UseVisualStyleBackColor = true;
+            this.FixSlack2.Click += new System.EventHandler(this.FixSlack2_Click);
+            // 
+            // SlackRemediationBox
+            // 
+            this.SlackRemediationBox.Location = new System.Drawing.Point(387, 36);
+            this.SlackRemediationBox.Multiline = true;
+            this.SlackRemediationBox.Name = "SlackRemediationBox";
+            this.SlackRemediationBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.SlackRemediationBox.Size = new System.Drawing.Size(332, 524);
+            this.SlackRemediationBox.TabIndex = 13;
             // 
             // FixSlack1
             // 
@@ -1217,104 +1318,14 @@
             this.CreateJSSToken.UseVisualStyleBackColor = true;
             this.CreateJSSToken.Click += new System.EventHandler(this.CreateJSSToken_Click);
             // 
-            // SlackRemediationBox
+            // SlackAssetOutput
             // 
-            this.SlackRemediationBox.Location = new System.Drawing.Point(387, 36);
-            this.SlackRemediationBox.Multiline = true;
-            this.SlackRemediationBox.Name = "SlackRemediationBox";
-            this.SlackRemediationBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.SlackRemediationBox.Size = new System.Drawing.Size(414, 524);
-            this.SlackRemediationBox.TabIndex = 13;
-            // 
-            // FixSlack2
-            // 
-            this.FixSlack2.Location = new System.Drawing.Point(315, 89);
-            this.FixSlack2.Name = "FixSlack2";
-            this.FixSlack2.Size = new System.Drawing.Size(66, 47);
-            this.FixSlack2.TabIndex = 14;
-            this.FixSlack2.Text = "Remediate";
-            this.FixSlack2.UseVisualStyleBackColor = true;
-            this.FixSlack2.Click += new System.EventHandler(this.FixSlack2_Click);
-            // 
-            // FixSlack4
-            // 
-            this.FixSlack4.Location = new System.Drawing.Point(315, 195);
-            this.FixSlack4.Name = "FixSlack4";
-            this.FixSlack4.Size = new System.Drawing.Size(66, 47);
-            this.FixSlack4.TabIndex = 16;
-            this.FixSlack4.Text = "Remediate";
-            this.FixSlack4.UseVisualStyleBackColor = true;
-            this.FixSlack4.Click += new System.EventHandler(this.FixSlack4_Click);
-            // 
-            // FixSlack3
-            // 
-            this.FixSlack3.Location = new System.Drawing.Point(315, 142);
-            this.FixSlack3.Name = "FixSlack3";
-            this.FixSlack3.Size = new System.Drawing.Size(66, 47);
-            this.FixSlack3.TabIndex = 15;
-            this.FixSlack3.Text = "Remediate";
-            this.FixSlack3.UseVisualStyleBackColor = true;
-            this.FixSlack3.Click += new System.EventHandler(this.FixSlack3_Click);
-            // 
-            // FixSlack8
-            // 
-            this.FixSlack8.Location = new System.Drawing.Point(315, 407);
-            this.FixSlack8.Name = "FixSlack8";
-            this.FixSlack8.Size = new System.Drawing.Size(66, 47);
-            this.FixSlack8.TabIndex = 20;
-            this.FixSlack8.Text = "Remediate";
-            this.FixSlack8.UseVisualStyleBackColor = true;
-            this.FixSlack8.Click += new System.EventHandler(this.FixSlack8_Click);
-            // 
-            // FixSlack7
-            // 
-            this.FixSlack7.Location = new System.Drawing.Point(315, 354);
-            this.FixSlack7.Name = "FixSlack7";
-            this.FixSlack7.Size = new System.Drawing.Size(66, 47);
-            this.FixSlack7.TabIndex = 19;
-            this.FixSlack7.Text = "Remediate";
-            this.FixSlack7.UseVisualStyleBackColor = true;
-            this.FixSlack7.Click += new System.EventHandler(this.FixSlack7_Click);
-            // 
-            // FixSlack6
-            // 
-            this.FixSlack6.Location = new System.Drawing.Point(315, 301);
-            this.FixSlack6.Name = "FixSlack6";
-            this.FixSlack6.Size = new System.Drawing.Size(66, 47);
-            this.FixSlack6.TabIndex = 18;
-            this.FixSlack6.Text = "Remediate";
-            this.FixSlack6.UseVisualStyleBackColor = true;
-            this.FixSlack6.Click += new System.EventHandler(this.FixSlack6_Click);
-            // 
-            // FixSlack5
-            // 
-            this.FixSlack5.Location = new System.Drawing.Point(315, 248);
-            this.FixSlack5.Name = "FixSlack5";
-            this.FixSlack5.Size = new System.Drawing.Size(66, 47);
-            this.FixSlack5.TabIndex = 17;
-            this.FixSlack5.Text = "Remediate";
-            this.FixSlack5.UseVisualStyleBackColor = true;
-            this.FixSlack5.Click += new System.EventHandler(this.FixSlack5_Click);
-            // 
-            // FixSlack10
-            // 
-            this.FixSlack10.Location = new System.Drawing.Point(315, 513);
-            this.FixSlack10.Name = "FixSlack10";
-            this.FixSlack10.Size = new System.Drawing.Size(66, 47);
-            this.FixSlack10.TabIndex = 22;
-            this.FixSlack10.Text = "Remediate";
-            this.FixSlack10.UseVisualStyleBackColor = true;
-            this.FixSlack10.Click += new System.EventHandler(this.FixSlack10_Click);
-            // 
-            // FixSlack9
-            // 
-            this.FixSlack9.Location = new System.Drawing.Point(315, 460);
-            this.FixSlack9.Name = "FixSlack9";
-            this.FixSlack9.Size = new System.Drawing.Size(66, 47);
-            this.FixSlack9.TabIndex = 21;
-            this.FixSlack9.Text = "Remediate";
-            this.FixSlack9.UseVisualStyleBackColor = true;
-            this.FixSlack9.Click += new System.EventHandler(this.FixSlack9_Click);
+            this.SlackAssetOutput.Location = new System.Drawing.Point(725, 36);
+            this.SlackAssetOutput.Multiline = true;
+            this.SlackAssetOutput.Name = "SlackAssetOutput";
+            this.SlackAssetOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.SlackAssetOutput.Size = new System.Drawing.Size(277, 524);
+            this.SlackAssetOutput.TabIndex = 23;
             // 
             // Form1
             // 
@@ -1467,6 +1478,7 @@
         private System.Windows.Forms.Button FixSlack4;
         private System.Windows.Forms.Button FixSlack3;
         private System.Windows.Forms.Button FixSlack2;
+        private System.Windows.Forms.TextBox SlackAssetOutput;
     }
 }
 

@@ -1653,9 +1653,9 @@ namespace Bulk_Report_Tool_V3
             //};
             //slackClient.Post(slackMessage);
             //--------------------
-            //https://slack.com/api/conversations.history?token=xoxb-101335543696-1378130353059-voL4FWpjoVt9DOkt968dbfoN&channel=C01B12DGMUM
+            //https://slack.com/api/conversations.history?token={APIKey.Text}&channel=C01B12DGMUM
             string tempText = "";
-            string JSSURL = "https://slack.com/api/conversations.history?token=xoxb-101335543696-1378130353059-voL4FWpjoVt9DOkt968dbfoN&channel=CMESA6V2R&limit=10";
+            string JSSURL = $"https://slack.com/api/conversations.history?token={APIKey.Text}&channel=CMESA6V2R&limit=10";
             RestClient rClient = new RestClient();
             rClient.endPoint = JSSURL;
             rClient.authTech = autheticationTechnique.RollYourOwn;
@@ -1720,10 +1720,10 @@ namespace Bulk_Report_Tool_V3
         private string CollectUsernameFromSlackID(string SlackID)
         {
             //To get the user from user id:
-            //https://slack.com/api/users.profile.get?token=xoxb-101335543696-1378130353059-XCnpHMXK2mG4kgVJuWENfJJa&user=WHWJ3B9ED
+            //https://slack.com/api/users.profile.get?token={APIKey.Text}&user=WHWJ3B9ED
 
             string ToReturn = "";
-            string JSSURL = "https://slack.com/api/users.profile.get?token=xoxb-101335543696-1378130353059-voL4FWpjoVt9DOkt968dbfoN&user=" + SlackID;
+            string JSSURL = "https://slack.com/api/users.profile.get?token={APIKey.Text}&user=" + SlackID;
             RestClient rClient = new RestClient();
             rClient.endPoint = JSSURL;
             rClient.authTech = autheticationTechnique.RollYourOwn;

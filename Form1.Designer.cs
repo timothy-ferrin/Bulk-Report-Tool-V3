@@ -145,6 +145,8 @@
             this.CreateJSSToken = new System.Windows.Forms.Button();
             this.DomainBox = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.APIKey = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.AssetManagement.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -1331,7 +1333,7 @@
             // 
             // DomainBox
             // 
-            this.DomainBox.Location = new System.Drawing.Point(724, 21);
+            this.DomainBox.Location = new System.Drawing.Point(867, 21);
             this.DomainBox.Name = "DomainBox";
             this.DomainBox.Size = new System.Drawing.Size(164, 20);
             this.DomainBox.TabIndex = 18;
@@ -1340,17 +1342,36 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(775, 5);
+            this.label17.Location = new System.Drawing.Point(918, 5);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(62, 13);
             this.label17.TabIndex = 19;
             this.label17.Text = "Jira Domain";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(721, 5);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(75, 13);
+            this.label19.TabIndex = 21;
+            this.label19.Text = "Slack API Key";
+            // 
+            // APIKey
+            // 
+            this.APIKey.Location = new System.Drawing.Point(676, 21);
+            this.APIKey.Name = "APIKey";
+            this.APIKey.Size = new System.Drawing.Size(164, 20);
+            this.APIKey.TabIndex = 20;
+            this.APIKey.Text = "Slack API Key";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1047, 656);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.APIKey);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.DomainBox);
             this.Controls.Add(this.CreateJSSToken);
@@ -1502,6 +1523,8 @@
         private System.Windows.Forms.TextBox SlackAssetOutput;
         private System.Windows.Forms.TextBox DomainBox;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox APIKey;
     }
 }
 

@@ -302,7 +302,7 @@ namespace Bulk_Report_Tool_V3
                 string strResponse = "";
                 if (AssetListType[i] == "Username")
                 {
-                    string MyURL = $"https://jira.tlcinternal.com/rest/insight/1.0/iql/objects?objectSchemaId=1&iql=objectobject%20HAVING%20outboundReferences(" + '\u0022' + "Username" + '\u0022' + "%20=%20" + GenericAssetList[i] + ")";
+                    string MyURL = $"https://{DomainBox.Text}/rest/insight/1.0/iql/objects?objectSchemaId=1&iql=objectobject%20HAVING%20outboundReferences(" + '\u0022' + "Username" + '\u0022' + "%20=%20" + GenericAssetList[i] + ")";
                     strResponse = JiraGetRequest(MyURL);
                     try
                     {
@@ -367,7 +367,7 @@ namespace Bulk_Report_Tool_V3
                         searchAssets2 += assetidstring + s.Trim() + " OR";
                     }
                     searchAssets2 += "DER BY Name ASC";
-                    string MyURL = $"https://jira.tlcinternal.com/rest/insight/1.0/iql/objects?objectSchemaId=1&iql=" + searchAssets2;
+                    string MyURL = $"https://{DomainBox.Text}/rest/insight/1.0/iql/objects?objectSchemaId=1&iql=" + searchAssets2;
                     string strResponse = JiraGetRequest(MyURL);
                     var jPerson = JsonConvert.DeserializeObject<dynamic>(strResponse);
                     try { NewGenericAssetList.Add(Convert.ToString(jPerson.objectEntries[0].attributes[11].objectAttributeValues[0].displayValue)); }
@@ -408,7 +408,7 @@ namespace Bulk_Report_Tool_V3
             RestClient rClient = new RestClient();
             try
             {
-                strResponse = JiraGetRequest($"https://jira.tlcinternal.com/rest/insight/1.0/iql/objects?objectSchemaId=1&iql=" + searchAssets2);
+                strResponse = JiraGetRequest($"https://{DomainBox.Text}/rest/insight/1.0/iql/objects?objectSchemaId=1&iql=" + searchAssets2);
                 var jPerson = JsonConvert.DeserializeObject<dynamic>(strResponse);
                 if (jPerson.objectEntries.Count > 0)
                 {
@@ -416,7 +416,7 @@ namespace Bulk_Report_Tool_V3
                 }
                 else
                 {
-                    strResponse = JiraGetRequest($"https://jira.tlcinternal.com/rest/insight/1.0/iql/objects?objectSchemaId=1&iql=" + assetidstring2 + searchAssets);
+                    strResponse = JiraGetRequest($"https://{DomainBox.Text}/rest/insight/1.0/iql/objects?objectSchemaId=1&iql=" + assetidstring2 + searchAssets);
                     jPerson = JsonConvert.DeserializeObject<dynamic>(strResponse);
                     if (jPerson.objectEntries.Count > 0)
                     {
@@ -779,7 +779,7 @@ namespace Bulk_Report_Tool_V3
                 QuickExport += $"Department: {temp}\r\n";
                 temp = GetDSInfo(username.Trim(), "EmailAddress").Trim();
                 QuickExport += $"Email Address: {temp}\r\n";
-                temp = GetDSInfo(username.Trim(), "EmployeeID").Trim();
+                temp = GetDSInfo(username.Trim(), "EmployeeNumber").Trim();
                 QuickExport += $"Employee ID: {temp}\r\n";
                 temp = GetDSInfo(username.Trim(), "FullName").Trim();
                 QuickExport += $"Full Name: {temp}\r\n";
@@ -1230,7 +1230,7 @@ namespace Bulk_Report_Tool_V3
             //gets current user's open tickets across all projects
             //if (MessageBox.Show("Really delete?", "Confirm delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
             //{
-            TicketInputBox.Text = "https://jira.tlcinternal.com/rest/api/2/search?jql=assignee+%3D+currentUser()+AND+resolution+%3D+Unresolved";
+            TicketInputBox.Text = $"https://{DomainBox.Text}/rest/api/2/search?jql=assignee+%3D+currentUser()+AND+resolution+%3D+Unresolved";
             RestClient rClient = new RestClient();
             rClient.endPoint = TicketInputBox.Text;
             rClient.authTech = autheticationTechnique.RollYourOwn;
@@ -1276,7 +1276,7 @@ namespace Bulk_Report_Tool_V3
         private void TicketSearchID_Click(object sender, EventArgs e)
         {
             //searches a single ticket by id
-            string myUrl = "https://jira.tlcinternal.com/rest/api/2/issue/" + TicketInputBox.Text;
+            string myUrl = $"https://{DomainBox.Text}/rest/api/2/issue/" + TicketInputBox.Text;
             RestClient rClient = new RestClient();
             rClient.endPoint = myUrl;
             rClient.authTech = autheticationTechnique.RollYourOwn;
@@ -1313,7 +1313,7 @@ namespace Bulk_Report_Tool_V3
                 TicketOutputBox.Text = $"Ticket Number: {tNum}\r\nTicket Title: {tTitle}\r\nTicket Description: {tDesc}\r\nTicket Assignee: {tAssignee}\r\nTicket Reporter: {tReporter}\r\n";
                 TicketOutputBox.Text += "Desk Location: ";
                 RetrieveDeskLocation(tFullName);
-                string myComments = RetrieveJSONComments("https://jira.tlcinternal.com/rest/api/2/issue/" + jPerson.key + "/comment/");
+                string myComments = RetrieveJSONComments($"https://{DomainBox.Text}/rest/api/2/issue/" + jPerson.key + "/comment/");
                 deserialiseJSONComments(myComments);
             }
             catch (Exception ex)
@@ -1328,7 +1328,7 @@ namespace Bulk_Report_Tool_V3
             string objectlocstring = " " + '\u0022' + "label" + '\u0022' + " = ";
 
             RestClient rClient = new RestClient();
-            rClient.endPoint = $"https://jira.tlcinternal.com/rest/insight/1.0/iql/objects?objectSchemaId=1&iql=" + objectlocstring + '"' + FullName + '"';
+            rClient.endPoint = $"https://{DomainBox.Text}/rest/insight/1.0/iql/objects?objectSchemaId=1&iql=" + objectlocstring + '"' + FullName + '"';
             rClient.authTech = autheticationTechnique.RollYourOwn;
             rClient.authType = authenticationType.Basic;
             rClient.userName = JiraUsernameBox.Text;
@@ -1420,7 +1420,7 @@ namespace Bulk_Report_Tool_V3
             string s = TicketInputBox.Text;
             TicketInputBox.Text = $"assignee = {s} AND resolution = unresolved";
             RestClient rClient = new RestClient();
-            rClient.endPoint = "https://jira.tlcinternal.com/rest/api/2/search?jql=" + TicketInputBox.Text;
+            rClient.endPoint = $"https://{DomainBox.Text}/rest/api/2/search?jql=" + TicketInputBox.Text;
             rClient.authTech = autheticationTechnique.RollYourOwn;
             rClient.authType = authenticationType.Basic;
             rClient.userName = JiraUsernameBox.Text;
@@ -1441,7 +1441,7 @@ namespace Bulk_Report_Tool_V3
             string s = TicketInputBox.Text;
             TicketInputBox.Text = $"reporter = {s} AND resolution = unresolved";
             RestClient rClient = new RestClient();
-            rClient.endPoint = "https://jira.tlcinternal.com/rest/api/2/search?jql=" + TicketInputBox.Text;
+            rClient.endPoint = $"https://{DomainBox.Text}/rest/api/2/search?jql=" + TicketInputBox.Text;
             rClient.authTech = autheticationTechnique.RollYourOwn;
             rClient.authType = authenticationType.Basic;
             rClient.userName = JiraUsernameBox.Text;
@@ -1461,7 +1461,7 @@ namespace Bulk_Report_Tool_V3
             //performs a ticket search by JQL
 
             RestClient rClient = new RestClient();
-            rClient.endPoint = "https://jira.tlcinternal.com/rest/api/2/search?jql=" + TicketInputBox.Text;
+            rClient.endPoint = $"https://{DomainBox.Text}/rest/api/2/search?jql=" + TicketInputBox.Text;
             rClient.authTech = autheticationTechnique.RollYourOwn;
             rClient.authType = authenticationType.Basic;
             rClient.userName = JiraUsernameBox.Text;
@@ -1479,7 +1479,7 @@ namespace Bulk_Report_Tool_V3
         private void TicketNewHirePull_Click(object sender, EventArgs e)
         {
             //finds New Hire Forms by date
-            TicketInputBox.Text = $"https://jira.tlcinternal.com/rest/api/2/search?jql=Issuetype%20=%20%22New%20Hire%22%20AND%20summary%20~%20" + TicketInputBox.Text;
+            TicketInputBox.Text = $"https://{DomainBox.Text}/rest/api/2/search?jql=Issuetype%20=%20%22New%20Hire%22%20AND%20summary%20~%20" + TicketInputBox.Text;
             RestClient rClient = new RestClient();
             rClient.endPoint = TicketInputBox.Text;
             rClient.authTech = autheticationTechnique.RollYourOwn;
@@ -1508,7 +1508,7 @@ namespace Bulk_Report_Tool_V3
 
                 foreach (string Line in Lines)
                 {
-                    string addyPOSTIssue = "https://jira.tlcinternal.com/rest/api/2/issue";
+                    string addyPOSTIssue = $"https://{DomainBox.Text}/rest/api/2/issue";
                     //11600 is the HD project ID, 10300 is the "IT Help" issue type
                     string TicketForm = "{\"fields\":{\"project\":{\"id\":\"11600\"},\"summary\":\"" + Line.Trim() + "\",\"issuetype\":{\"id\":\"10300\"},\"assignee\":{\"name\":\"" + JiraUsernameBox.Text + "\"}}}";
 
@@ -1536,7 +1536,7 @@ namespace Bulk_Report_Tool_V3
         private void OpenTicketInBrowser_Click(object sender, EventArgs e)
         {
             //Opens currently selected ticket in browser
-            System.Diagnostics.Process.Start($"https://jira.tlcinternal.com/browse/{SmallTicketBox.Text}");
+            System.Diagnostics.Process.Start($"https://{DomainBox.Text}/browse/{SmallTicketBox.Text}");
         }
 
         private void OpenAllTicketsFromList_Click(object sender, EventArgs e)
@@ -1546,7 +1546,7 @@ namespace Bulk_Report_Tool_V3
                 foreach (string s in TicketListOutputBox.Items)
                 {
                     string search = $"{s.Split('-')[0].Trim()}-{s.Split('-')[1].Trim()}";
-                    System.Diagnostics.Process.Start($"https://jira.tlcinternal.com/browse/{search}");
+                    System.Diagnostics.Process.Start($"https://{DomainBox.Text}/browse/{search}");
                 }
             }
         }
@@ -1559,7 +1559,7 @@ namespace Bulk_Report_Tool_V3
             {
                 SmallTicketBox.Text = s.Split(' ')[0].Trim();
 
-                string myUrl = "https://jira.tlcinternal.com/rest/api/2/issue/" + SmallTicketBox.Text;
+                string myUrl = $"https://{DomainBox.Text}/rest/api/2/issue/" + SmallTicketBox.Text;
                 RestClient rClient = new RestClient();
                 rClient.endPoint = myUrl;
                 rClient.authTech = autheticationTechnique.RollYourOwn;
@@ -1602,7 +1602,7 @@ namespace Bulk_Report_Tool_V3
                 try { tDescription = tDescription.Replace("\n", " "); } catch { }
                 try { tDescription = tDescription.Replace("|", " - "); } catch { }
                 TicketOutputBox.Text += $"{tNum}|{tTitle}|{tAssignee}|{tReporter}|{tCreated}|{tAttachmentDate}|{tEndDate}|{tDescription}\r\n";
-                //string myComments = RetrieveJSONComments("https://jira.tlcinternal.com/rest/api/2/issue/" + jPerson.key + "/comment/");
+                //string myComments = RetrieveJSONComments($"https://{DomainBox.Text}/rest/api/2/issue/" + jPerson.key + "/comment/");
                 //deserialiseJSONComments(myComments);
             }
             catch (Exception ex)
@@ -1624,7 +1624,7 @@ namespace Bulk_Report_Tool_V3
             //Gives info for the selected ticket
 
             SmallTicketBox.Text = Convert.ToString(TicketListOutputBox.SelectedItem).Split(' ')[0];
-            string myUrl = "https://jira.tlcinternal.com/rest/api/2/issue/" + SmallTicketBox.Text;
+            string myUrl = $"https://{DomainBox.Text}/rest/api/2/issue/" + SmallTicketBox.Text;
             RestClient rClient = new RestClient();
             rClient.endPoint = myUrl;
             rClient.authTech = autheticationTechnique.RollYourOwn;
@@ -1811,7 +1811,7 @@ namespace Bulk_Report_Tool_V3
         {
             List<string> toReturn = new List<string>();
             string strResponse = "";
-            string MyURL = $"https://jira.tlcinternal.com/rest/insight/1.0/iql/objects?objectSchemaId=1&iql=objectobject%20HAVING%20outboundReferences(" + '\u0022' + "Username" + '\u0022' + "%20=%20" + username.Trim() + ")";
+            string MyURL = $"https://{DomainBox.Text}/rest/insight/1.0/iql/objects?objectSchemaId=1&iql=objectobject%20HAVING%20outboundReferences(" + '\u0022' + "Username" + '\u0022' + "%20=%20" + username.Trim() + ")";
             strResponse = JiraGetRequest(MyURL);
             try
             {

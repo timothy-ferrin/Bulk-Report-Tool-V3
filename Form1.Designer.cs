@@ -119,6 +119,7 @@
             this.TicketInputBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.SlackAssetOutput = new System.Windows.Forms.TextBox();
             this.FixSlack10 = new System.Windows.Forms.Button();
             this.FixSlack9 = new System.Windows.Forms.Button();
             this.FixSlack8 = new System.Windows.Forms.Button();
@@ -142,7 +143,8 @@
             this.SlackMsg1 = new System.Windows.Forms.TextBox();
             this.PullHDSlack = new System.Windows.Forms.Button();
             this.CreateJSSToken = new System.Windows.Forms.Button();
-            this.SlackAssetOutput = new System.Windows.Forms.TextBox();
+            this.DomainBox = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.AssetManagement.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -1099,6 +1101,15 @@
             this.tabPage5.Text = "Slack";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // SlackAssetOutput
+            // 
+            this.SlackAssetOutput.Location = new System.Drawing.Point(725, 36);
+            this.SlackAssetOutput.Multiline = true;
+            this.SlackAssetOutput.Name = "SlackAssetOutput";
+            this.SlackAssetOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.SlackAssetOutput.Size = new System.Drawing.Size(277, 524);
+            this.SlackAssetOutput.TabIndex = 23;
+            // 
             // FixSlack10
             // 
             this.FixSlack10.Location = new System.Drawing.Point(315, 513);
@@ -1318,20 +1329,30 @@
             this.CreateJSSToken.UseVisualStyleBackColor = true;
             this.CreateJSSToken.Click += new System.EventHandler(this.CreateJSSToken_Click);
             // 
-            // SlackAssetOutput
+            // DomainBox
             // 
-            this.SlackAssetOutput.Location = new System.Drawing.Point(725, 36);
-            this.SlackAssetOutput.Multiline = true;
-            this.SlackAssetOutput.Name = "SlackAssetOutput";
-            this.SlackAssetOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.SlackAssetOutput.Size = new System.Drawing.Size(277, 524);
-            this.SlackAssetOutput.TabIndex = 23;
+            this.DomainBox.Location = new System.Drawing.Point(724, 21);
+            this.DomainBox.Name = "DomainBox";
+            this.DomainBox.Size = new System.Drawing.Size(164, 20);
+            this.DomainBox.TabIndex = 18;
+            this.DomainBox.Text = "jira.yourdomain.com";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(775, 5);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(62, 13);
+            this.label17.TabIndex = 19;
+            this.label17.Text = "Jira Domain";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1047, 656);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.DomainBox);
             this.Controls.Add(this.CreateJSSToken);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.JSSPasswordBox);
@@ -1479,6 +1500,8 @@
         private System.Windows.Forms.Button FixSlack3;
         private System.Windows.Forms.Button FixSlack2;
         private System.Windows.Forms.TextBox SlackAssetOutput;
+        private System.Windows.Forms.TextBox DomainBox;
+        private System.Windows.Forms.Label label17;
     }
 }
 
